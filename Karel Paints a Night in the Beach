@@ -1,0 +1,116 @@
+def paint_sand():
+    while front_is_clear():
+        paint('rgb(204, 153, 33)')
+        move()
+    paint('rgb(204, 153, 33)')
+    turn_around()
+    while front_is_clear():
+        move()
+    turn_around()
+    
+def moving_rows():
+    turn_left()
+    move()
+    turn_right()
+
+def paint_ocean():
+    while front_is_clear():
+        paint(color['blue'])
+        move()
+    paint(color['blue'])
+    turn_around()
+    while front_is_clear():
+        move()
+    turn_around()
+
+def paint_night_starting_white():
+    for i in range(9):
+        paint(color['yellow'])
+        move()
+        paint(color['black'])
+        move()
+    paint(color['yellow'])
+    move()
+    paint(color['black'])
+    turn_around()
+    while front_is_clear():
+        move()
+    turn_around()
+
+def paint_night_starting_black():
+    for i in range(9):
+        paint(color['black'])
+        move()
+        paint(color['yellow'])
+        move()
+    paint(color['black'])
+    move()
+    paint(color['yellow'])
+    turn_around()
+    while front_is_clear():
+        move()
+    turn_around()
+
+def making_moon_part():
+    for i in range(5):
+        paint(color['yellow'])
+        move()
+        paint(color['black'])
+        move()
+    paint(color['white'])
+    move()
+    paint(color['white'])
+    move()
+    for i in range(3):
+        paint(color['yellow'])
+        move()
+        paint(color['black'])
+        move()
+    paint(color['yellow'])
+    move()
+    paint(color['black'])
+    turn_around()
+    while front_is_clear():
+        move()
+    turn_around()
+
+def making_moon():
+    for i in range(5):
+        paint(color['black'])
+        move()
+        paint(color['yellow'])
+        move()
+    paint(color['white'])
+    move()
+    paint(color['white'])
+    move()
+    for i in range(3):
+        paint(color['black'])
+        move()
+        paint(color['yellow'])
+        move()
+    paint(color['black'])
+    move()
+    paint(color['yellow'])
+    turn_around()
+    while front_is_clear():
+        move()
+    turn_around()
+    
+for i in range(4):
+    paint_sand()
+    moving_rows()
+
+for i in range(11):
+    paint_ocean()
+    moving_rows()
+
+paint_night_starting_white()
+moving_rows()
+paint_night_starting_black()
+moving_rows()
+making_moon_part()
+moving_rows()
+making_moon()
+moving_rows()
+paint_night_starting_white()
