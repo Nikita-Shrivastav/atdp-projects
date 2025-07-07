@@ -1,0 +1,132 @@
+#draw sky
+def draw_sky():
+    rect = Rectangle(get_width(), get_height())
+    rect.set_color(Color.blue)
+    add(rect)
+    
+#draw the grass
+def draw_grass():
+    rect = Rectangle(get_width(), 100)
+    rect.set_position(0, get_height()-50)
+    rect.set_color(Color.green)
+    add(rect)
+    
+#Make a function to draw rectangles
+def draw_rect(width, height, x,y,color):
+    rect = Rectangle(width, height)
+    rect.set_position(x,y)
+    rect.set_color(color)
+    add(rect)
+
+#Make a function to draw the circles    
+def draw_circ(radius, x,y,color):
+    circ = Circle(radius)
+    circ.set_position(x,y)
+    circ.set_color(color)
+    add(circ)    
+  
+#Make a function to draw the lines    
+def draw_line(x1, y1, x2, y2, color):
+    line = Line(x1, y1, x2, y2)
+    line.set_color(color)
+    add(line)    
+
+#Make a function to draw the house
+def make_house():
+    draw_rect(200,100,0, get_height()-150,Color.red)
+    draw_rect(100,35, 0, get_height()-185, Color.brown)
+    draw_rect(30,50, 85, get_height()-100, Color.brown)
+    draw_circ(2,110, get_height()-80, Color.black)
+
+#Make a tree
+def make_tree():
+    draw_line(get_width() - 40, get_height()-50, get_width() - 40, get_height()/2 , Color.brown)
+    draw_circ(40, get_width()-40, get_height()/2, Color.green)
+
+#Make Nyx    
+def make_Nyx():
+    draw_line(get_width() - 250, get_height() - 60, get_width() - 250, get_height()-90, Color.brown)
+    draw_rect(20, 15, get_width()-260, get_height()-100, Color.black)
+    draw_circ(10, get_width()-250, get_height()-90, Color.brown)
+    draw_line(get_width() - 240, get_height() - 75, get_width() - 260, get_height()-75, Color.brown), Color.brown
+    draw_line(get_width() - 250, get_height() - 60, get_width() - 240, get_height()-50, Color.brown)
+    draw_line(get_width() - 250, get_height() - 60, get_width() - 260, get_height()-50, Color.brown)
+    draw_circ(1, get_width()-255, get_height()-92, Color.black)
+    draw_circ(1, get_width()-245, get_height()-92, Color.black)
+
+def make_Raven():
+    draw_line(65, get_height() - 60, 65, get_height()-90, Color.brown)
+    draw_circ(10, 65, get_height()-90, Color.black)
+    draw_rect(20, 25, get_width()-345, get_height()-100, Color.black)
+    draw_circ(10, 65, get_height()-90, Color.brown)
+    draw_line(get_width() - 335, get_height() - 61, get_width() - 345, get_height()-50, Color.brown)
+    draw_line(get_width() - 334, get_height() - 61, get_width() - 324, get_height()-50, Color.brown)
+    draw_line(get_width() - 344, get_height() - 73, get_width() - 324, get_height()-73, Color.brown)
+    draw_circ(1, get_width()-339, get_height()-92, Color.black)
+    draw_circ(1, get_width()-329, get_height()-92, Color.black)
+
+def draw_scene1():
+    print("This is scene 1")
+    print("Knock Knock!")
+    draw_sky()
+    draw_grass()
+    make_tree()
+    make_house()
+    make_Nyx()
+
+def draw_scene2():
+    print("This is scene 2")
+    print("Nyx: Hi!")
+    print("Raven: Hi?")
+    draw_sky()
+    draw_grass()
+    make_tree()
+    make_house()
+    make_Nyx()
+    make_Raven()
+    
+def draw_scene3():
+    print("This is scene 3")
+    print("Nyx: I love your house!")
+    print("Raven: Thank you!")
+    print("They start talking and realise they have a lot in common.")
+    draw_sky()
+    draw_grass()
+    make_tree()
+    make_house()
+    make_Nyx()
+    make_Raven()
+
+def draw_scene4():
+    print("This is scene 4")
+    print("They become best friends for life.")
+    draw_sky()
+    draw_grass()
+    make_tree()
+    make_house()
+    make_Nyx()
+    make_Raven()
+
+
+scene_counter = 0
+
+# When this function is called the next scene is drawn.
+
+def draw_next_screen(x, y):
+    global scene_counter 
+    scene_counter += 1
+
+    if scene_counter == 1:
+        draw_scene1()
+    elif scene_counter == 2:
+        draw_scene2()
+    elif scene_counter == 3:
+        draw_scene3()
+    else:
+        draw_scene4()
+
+welcome = Text("Click to Begin!")
+welcome.set_position(get_width() / 2 - welcome.get_width() / 2, get_height() / 2)
+add(welcome)
+
+add_mouse_click_handler(draw_next_screen)
