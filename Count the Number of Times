@@ -1,0 +1,10 @@
+my_list=[]
+def owl_count(text):
+    count = 0
+    my_list = text.split()
+    for i in range(len(my_list)):
+        if 'owl' in my_list[i]:
+            count +=1
+    return count
+
+print(owl_count("I really like owls. Did you know that an owl's eyes are more than twice as big as the eyes of other birds of comparable weight? And that when an owl partially closes its eyes during the day, it is just blocking out light? Sometimes I wish I could be an owl."))
