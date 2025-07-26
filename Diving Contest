@@ -1,0 +1,6 @@
+def calculate_score(judge_scores):
+    add_scores = judge_scores[0] + judge_scores[1] + judge_scores[2]
+    return add_scores
+
+judge_scores = (10,9,6)
+print(calculate_score(judge_scores))
