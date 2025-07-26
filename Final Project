@@ -1,0 +1,67 @@
+#Must run in Sandbox
+import random
+print("Welcome to Geo Gueser!")
+print("You will be guessing COUNTRIES and have 2 guesses and 3 hints.")
+names_of_countries = ["England", "India", "China", "Spain", "United States of America", "Australia"]
+country = random.choice(names_of_countries)
+#Give the hints about the chosen country
+def hint(country):
+    for i in range(3):
+        if i == 0:
+            if country == 'England':
+                print("French was the first offical lagnuage for this country.")
+            elif country == 'India':
+                print("This country was the birthplace of chess.")
+            elif country == 'China':
+                print("This country was the second-largest country by land area.")
+            elif country == 'Spain':
+                print("This country was the birthplace of the world's first modern novel, Don Quixote.")
+            elif country == 'United States of America':
+                print("This country's flag was changed 27 times.")
+            elif country == 'Australia':
+                print("This country is home to the Great Barrier Reef.")
+        if i==1:
+            if country == 'England':
+                print("This country has the biggest lake.")
+            elif country == 'India':
+                print("This country is home to the oldest religion.")
+            elif country == 'China':
+                print("This country has the world's largest standing army.")
+            elif country == 'Spain':
+                print("This country has the third-largest number of UNESCO World Heritage sites.")
+            elif country == 'United States of America':
+                print("This country experiences the most tornadoes globally.")
+            elif country == 'Australia':
+                print("This country is known for its unique wildlife.")
+        if i==2:
+            if country == 'England':
+                print("This country invented champagne.")
+            elif country == 'India':
+                print("This country is the second largest English-speaking country in the world.")
+            elif country == 'China':
+                print("This country only has one offical time zone.")
+            elif country == 'Spain':
+                print("This country is in the same time-zone as Germany.")
+            elif country == 'United States of America':
+                print("This country has a town that has been on fire for 60 years.")
+            elif country == 'Australia':
+                print("This country has a pink lake.")
+#Tell the user about the hints
+print("These are your three hints: ")        
+hint(country)        
+country = country.lower()
+guess = 2
+#Let the user guess the country and only give them 2 guesses
+while True:
+    guessing_country = input("Please enter a guess: ")
+    guessing_country = guessing_country.lower()
+    if guessing_country==country:
+        print("You got it!")
+        break
+    else:
+        print("Incorrect")
+        guess = guess - 1
+        print("You have " + str(guess) + " guess left.")
+    if guess==0 and guessing_country!=country:
+        print("You did not get it! The correct answer was " + country)
+        break
