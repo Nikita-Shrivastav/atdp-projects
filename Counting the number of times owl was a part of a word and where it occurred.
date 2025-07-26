@@ -1,0 +1,8 @@
+indices = []
+text = input("Enter some text: ")
+words = text.split()
+for i, word in enumerate(words):
+    if 'owl' in word:
+        indices.append(i)
+print("There were " + str(len(indices)) + " words that contained \"owl\".")
+print("They occured at indices " + str(indices))
