@@ -1,0 +1,4 @@
+my_list = ["Inception", "Interstellar", "Body of Lies", "Matrix"]
+print(my_list[0])
+my_list[0] = "Star Wars"
+print(my_list[0])
