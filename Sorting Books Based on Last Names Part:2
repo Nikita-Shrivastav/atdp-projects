@@ -1,0 +1,9 @@
+library_books = []
+authors = []
+for i in range(5):
+    name = input("What is the full name: ")
+    library_books = name.split()
+    authors.append(library_books[-1])
+
+authors.sort()
+print(authors)
