@@ -1,0 +1,13 @@
+import random
+
+"""
+
+This program simulates the random flipping of a fair coin flip.
+"""
+
+# Enter your code here
+heads_tails = random.randint(1,2)
+if heads_tails == 1:
+    print("Heads")
+else:
+    print("Tails")
