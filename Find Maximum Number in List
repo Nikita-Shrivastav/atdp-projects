@@ -1,0 +1,9 @@
+def max_int_in_list(my_list):
+    my_list.sort()
+    legnth = len(my_list)
+    if my_list[0]<legnth:
+        my_list.reverse()
+    
+    return my_list[0]
+my_list = [5, 2, -5, 10, 23, -21]
+print(max_int_in_list(my_list))
